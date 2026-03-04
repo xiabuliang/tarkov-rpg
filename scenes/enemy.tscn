@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://enemy123"]
+
+[ext_resource type="Script" path="res://scripts/enemy_ai.gd" id="1_enemy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_enemy"]
+radius = 16.0
+
+[sub_resource type="Gradient" id="Gradient_enemy"]
+colors = PackedColorArray(0.8, 0.2, 0.2, 1, 0.6, 0.1, 0.1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_enemy"]
+gradient = SubResource("Gradient_enemy")
+width = 32
+height = 32
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
+collision_layer = 4
+collision_mask = 15
+script = ExtResource("1_enemy")
+detection_range = 400.0
+attack_range = 300.0
+lose_sight_range = 600.0
+field_of_view = 120.0
+walk_speed = 80.0
+run_speed = 180.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_enemy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_enemy")
+
+[node name="VisionRay" type="RayCast2D" parent="."]
+collision_mask = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="StateTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="ShootTimer" type="Timer" parent="."]
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]

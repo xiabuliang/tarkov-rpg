@@ -1,0 +1,175 @@
+[gd_scene load_steps=2 format=3 uid="uid://settingsui123"]
+
+[ext_resource type="Script" path="res://ui/settings_ui.gd" id="1_settingsui"]
+
+[node name="SettingsUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_settingsui")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -300.0
+offset_right = 400.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleLabel" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "设置"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="SettingsList" type="VBoxContainer" parent="Panel/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MasterVolume" type="HBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/SettingsList"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/ScrollContainer/SettingsList/MasterVolume"]
+layout_mode = 2
+text = "主音量"
+
+[node name="Slider" type="HSlider" parent="Panel/VBoxContainer/ScrollContainer/SettingsList/MasterVolume"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 100.0
+value = 100.0
+
+[node name="ValueLabel" type="Label" parent="Panel/VBoxContainer/ScrollContainer/SettingsList/MasterVolume"]
+layout_mode = 2
+text = "100%"
+
+[node name="MusicVolume" type="HBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/SettingsList"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/ScrollContainer/SettingsList/MusicVolume"]
+layout_mode = 2
+text = "音乐音量"
+
+[node name="Slider" type="HSlider" parent="Panel/VBoxContainer/ScrollContainer/SettingsList/MusicVolume"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 100.0
+value = 70.0
+
+[node name="ValueLabel" type="Label" parent="Panel/VBoxContainer/ScrollContainer/SettingsList/MusicVolume"]
+layout_mode = 2
+text = "70%"
+
+[node name="SFXVolume" type="HBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/SettingsList"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/ScrollContainer/SettingsList/SFXVolume"]
+layout_mode = 2
+text = "音效音量"
+
+[node name="Slider" type="HSlider" parent="Panel/VBoxContainer/ScrollContainer/SettingsList/SFXVolume"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 100.0
+value = 80.0
+
+[node name="ValueLabel" type="Label" parent="Panel/VBoxContainer/ScrollContainer/SettingsList/SFXVolume"]
+layout_mode = 2
+text = "80%"
+
+[node name="AmbientVolume" type="HBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/SettingsList"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/ScrollContainer/SettingsList/AmbientVolume"]
+layout_mode = 2
+text = "环境音量"
+
+[node name="Slider" type="HSlider" parent="Panel/VBoxContainer/ScrollContainer/SettingsList/AmbientVolume"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 100.0
+value = 50.0
+
+[node name="ValueLabel" type="Label" parent="Panel/VBoxContainer/ScrollContainer/SettingsList/AmbientVolume"]
+layout_mode = 2
+text = "50%"
+
+[node name="Fullscreen" type="HBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/SettingsList"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/ScrollContainer/SettingsList/Fullscreen"]
+layout_mode = 2
+text = "全屏模式"
+
+[node name="CheckBox" type="CheckBox" parent="Panel/VBoxContainer/ScrollContainer/SettingsList/Fullscreen"]
+layout_mode = 2
+
+[node name="VSync" type="HBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/SettingsList"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/ScrollContainer/SettingsList/VSync"]
+layout_mode = 2
+text = "垂直同步"
+
+[node name="CheckBox" type="CheckBox" parent="Panel/VBoxContainer/ScrollContainer/SettingsList/VSync"]
+layout_mode = 2
+button_pressed = true
+
+[node name="MouseSensitivity" type="HBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/SettingsList"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/ScrollContainer/SettingsList/MouseSensitivity"]
+layout_mode = 2
+text = "鼠标灵敏度"
+
+[node name="Slider" type="HSlider" parent="Panel/VBoxContainer/ScrollContainer/SettingsList/MouseSensitivity"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 10.0
+max_value = 200.0
+value = 50.0
+
+[node name="ValueLabel" type="Label" parent="Panel/VBoxContainer/ScrollContainer/SettingsList/MouseSensitivity"]
+layout_mode = 2
+text = "1.0"
+
+[node name="ButtonContainer" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="SaveButton" type="Button" parent="Panel/VBoxContainer/ButtonContainer"]
+layout_mode = 2
+text = "保存设置"
+
+[node name="ResetButton" type="Button" parent="Panel/VBoxContainer/ButtonContainer"]
+layout_mode = 2
+text = "恢复默认"
+
+[node name="CloseButton" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "关闭"
